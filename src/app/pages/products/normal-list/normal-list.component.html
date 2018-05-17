@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>
+        Product List
+      </nb-card-header>
+      <nb-card-body>
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
+              <th>Description</th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let product of productList | paginate: { itemsPerPage: 10, currentPage: p }">
+              <th class="text-nowrap" scope="row">{{ product.id }}</th>
+              <td>{{ product.productName }}</td>
+              <td>{{ product.price }}</td>
+              <td>{{ product.description }}</td>
+              <td>
+                <nb-actions size="small">
+                  <nb-action icon="nb-edit" (click)="edit(product.id)"></nb-action>
+                  <nb-action icon="nb-trash" (click)="delete(product.id)"></nb-action>
+                </nb-actions>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="col-md-6 offset-md-3">
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+        </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

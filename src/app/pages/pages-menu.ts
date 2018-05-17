@@ -12,6 +12,53 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
+    title: 'Products',
+    icon: 'nb-list',
+    children: [
+      {
+        title: 'Product list',
+        link: '/pages/products/normal-list',
+      },
+      {
+        title: 'Product list(smart table)',
+        link: '/pages/products/list',
+      },
+    ],
+    link: '/pages/products',
+  },
+  {
+    title: 'SAMPLES',
+    group: true,
+  },
+  {
+    title: 'Forms',
+    icon: 'nb-compose',
+    children: [
+      {
+        title: 'Form Inputs',
+        link: '/pages/forms/inputs',
+      },
+      {
+        title: 'Form Layouts',
+        link: '/pages/forms/layouts',
+      },
+    ],
+  },
+  {
+    title: 'Tables',
+    icon: 'nb-tables',
+    children: [
+      {
+        title: 'Smart Table',
+        link: '/pages/tables/smart-table',
+      },
+    ],
+  },
+  {
+    title: 'ADMIN',
+    group: true,
+  },
+  {
     title: 'Auth',
     icon: 'nb-locked',
     children: [
